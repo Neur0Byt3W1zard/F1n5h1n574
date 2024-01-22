@@ -6,15 +6,6 @@ B="\e[34m"
 G="\e[32m"
 RS="\e[0m"
 BO="\e[32m"
-if find -name setup.sh &> /dev/null
-then
-   echo "execute o setup.sh"
-   exit 1
-else
-   echo "[ ok ]"
-   sleep 1
-   clear
-fi
 banner() {
 echo -e "░░░░░░░░░░░░░░░░░   ${G}Author${R}:${RS}"
 echo -e "░░░${R}▄░▀▄${RS}░░░${R}▄▀░▄${RS}░░░   ${B}Github${R}:${RS}"
