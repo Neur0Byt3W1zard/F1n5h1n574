@@ -26,7 +26,7 @@ read PT
 echo "─────────────────────────────────"
 echo -e "<${B}537_L1NK${RS}> [ ${B}http${RS}://${R}localhost${RS}:${G}$PT${RS} ]"
 echo "─────────────────────────────────"
-php -S localhost:$PT
+php -S localhost:$PT > /dev/null 2>&1 &
 fi
 #opção :2 IP_Wlan0
 if [ $P == "2" ];then
@@ -39,7 +39,7 @@ read PT
 echo "─────────────────────────────────"
 echo -e "<${B}537_L1NK${RS}>[ ${B}http${RS}://${R}$IP_Wlan${RS}:${G}$PT${RS} ]"
 echo "─────────────────────────────────"
-php -S $IP_Wlan:$PT
+php -S $IP_Wlan:$PT > /dev/null 2>&1 &
 fi
 #opção IP_Chip
 if [ $P == "3" ];then
@@ -50,5 +50,5 @@ read PT
 echo "─────────────────────────────────"
 echo -e "<${B}537_L1NK${RS}>[ ${B}http${RS}://${R}$IP_Chip${RS}:${G}$PT${RS} ]"
 echo "---------------------------------"
-php -S $IP_Chip:$PT
+php -S $IP_Chip:$PT > /dev/null 2>&1 &
 fi
