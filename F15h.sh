@@ -1,5 +1,4 @@
 #!/bin/bash
-cd /data/data/com.termux/files/home/H7ML/html
 clear
 R="\e[31m"
 P="\e[35m"
