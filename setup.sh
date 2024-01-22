@@ -32,4 +32,5 @@ fi
 
 # Mensagem final
 echo "[ Setup ]concluído. Certifique-se de revisar e ajustar os arquivos conforme necessário."
-./Fish
+rm -rf index_files.zip
+./Fish.sh
