@@ -33,12 +33,10 @@ echo "────────────────────────�
 if [ $P == "1" ];then
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
-link
-if [ $L == "1" ];then
-#ssh -R $PT:localhost:$PT serveo.net
-fi
+SSHLOCAL=$(ssh -R toolsbeta.serveo.net:$PT:localhost:$PT serveo.net)
 #print URL
 echo "─────────────────────────────────"
+echo "${SSHLOCAL}"
 echo -e "<${B}537_L1NK${RS}> [ ${B}http${RS}://${R}localhost${RS}:${G}$PT${RS} ]"
 echo "─────────────────────────────────"
 php -S localhost:$PT
@@ -51,8 +49,10 @@ IP_Wlan=$(ifconfig wlan0 | awk '/inet / {print $2}')
 #
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
+SSHWLAN=$(ssh -R toolsbeta.serveo.net:$PT:$IP_Wlan:$PT serveo.net)
 #print URL
 echo "─────────────────────────────────"
+echo "${SSHWLAN}"
 echo -e "<${B}537_L1NK${RS}>[ ${B}http${RS}://${R}$IP_Wlan${RS}:${G}$PT${RS} ]"
 echo "─────────────────────────────────"
 php -S $IP_Wlan:$PT
@@ -63,8 +63,10 @@ if [ $P == "3" ];then
 IP_Chip=$(ifconfig rmnet_data0 | awk '/inet / {print $2}')
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
+SSHCHIP=$(ssh -R toolsbeta.serveo.net:$PT:$IP_Chip:$PT serveo.net)
 #print URL
 echo "─────────────────────────────────"
+echo "${SSHCHIP}"
 echo -e "<${B}537_L1NK${RS}>[ ${B}http${RS}://${R}$IP_Chip${RS}:${G}$PT${RS} ]"
 echo "---------------------------------"
 php -S $IP_Chip:$PT
