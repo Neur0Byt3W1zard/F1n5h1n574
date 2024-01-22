@@ -33,13 +33,12 @@ echo "────────────────────────�
 if [ $P == "1" ];then
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
-ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:1111 serveo.net
 #print URL
 echo "─────────────────────────────────"
-echo "${SSHLOCAL}"
 echo -e "<${B}537_L1NK${RS}> [ ${B}http${RS}://${R}localhost${RS}:${G}$PT${RS} ]"
 echo "─────────────────────────────────"
 php -S localhost:$PT
+ssh -R 80:localhost:$PT serveo.net
 #echo -e "[ ${G}CTRL+c${RS] ${R}exit${RS}"
 fi
 #opção :2 IP_Wlan0
@@ -49,12 +48,12 @@ IP_Wlan=$(ifconfig wlan0 | awk '/inet / {print $2}')
 #
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
-ssh -R 80:$IP_Wlan:$PT serveo.net
 #print URL
 echo "─────────────────────────────────"
 echo -e "<${B}537_L1NK${RS}>[ ${B}http${RS}://${R}$IP_Wlan${RS}:${G}$PT${RS} ]"
 echo "─────────────────────────────────"
 php -S $IP_Wlan:$PT
+ssh -R 80:$IP_Wlan:$PT serveo.net
 #echo -e "[ ${G}CTRL+c${RS] $
 fi
 #opção IP_Chip
@@ -62,10 +61,10 @@ if [ $P == "3" ];then
 IP_Chip=$(ifconfig rmnet_data0 | awk '/inet / {print $2}')
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
-ssh -R 80:$IP_Chip:$PT serveo.net
 #print URL
 echo "─────────────────────────────────"
 echo -e "<${B}537_L1NK${RS}>[ ${B}http${RS}://${R}$IP_Chip${RS}:${G}$PT${RS} ]"
 echo "---------------------------------"
 php -S $IP_Chip:$PT
+ssh -R 80:$IP_Chip:$PT serveo.net
 fi
