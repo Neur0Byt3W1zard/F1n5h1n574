@@ -33,7 +33,7 @@ echo "────────────────────────�
 if [ $P == "1" ];then
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
-SSHLOCAL=$(ssh -R toolsbeta.serveo.net:$PT:localhost:$PT serveo.net)
+ssh -R toolsbeta.serveo.net:80:localhost:$PT serveo.net
 #print URL
 echo "─────────────────────────────────"
 echo "${SSHLOCAL}"
@@ -49,7 +49,7 @@ IP_Wlan=$(ifconfig wlan0 | awk '/inet / {print $2}')
 #
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
-SSHWLAN=$(ssh -R toolsbeta.serveo.net:$PT:$IP_Wlan:$PT serveo.net)
+ssh -R toolsbeta.serveo.net:80:$IP_Wlan:$PT serveo.net
 #print URL
 echo "─────────────────────────────────"
 echo "${SSHWLAN}"
@@ -63,7 +63,7 @@ if [ $P == "3" ];then
 IP_Chip=$(ifconfig rmnet_data0 | awk '/inet / {print $2}')
 echo -e -n "< ${R}P0R74${RS}: "
 read PT
-SSHCHIP=$(ssh -R toolsbeta.serveo.net:$PT:$IP_Chip:$PT serveo.net)
+ssh -R toolsbeta.serveo.net:80:$IP_Chip:$PT serveo.net
 #print URL
 echo "─────────────────────────────────"
 echo "${SSHCHIP}"
