@@ -37,7 +37,8 @@ read PT
 echo "─────────────────────────────────"
 echo -e "<${B}537_L1NK${RS}> [ ${B}http${RS}://${R}localhost${RS}:${G}$PT${RS} ]"
 echo "─────────────────────────────────"
-php -S localhost:$PT
+php -S localhost:$PT &
+sleep 1
 ssh -R 80:localhost:$PT serveo.net
 #echo -e "[ ${G}CTRL+c${RS] ${R}exit${RS}"
 fi
@@ -52,7 +53,8 @@ read PT
 echo "─────────────────────────────────"
 echo -e "<${B}537_L1NK${RS}>[ ${B}http${RS}://${R}$IP_Wlan${RS}:${G}$PT${RS} ]"
 echo "─────────────────────────────────"
-php -S $IP_Wlan:$PT
+php -S $IP_Wlan:$PT &
+sleep 1
 ssh -R 80:$IP_Wlan:$PT serveo.net
 #echo -e "[ ${G}CTRL+c${RS] $
 fi
@@ -65,6 +67,7 @@ read PT
 echo "─────────────────────────────────"
 echo -e "<${B}537_L1NK${RS}>[ ${B}http${RS}://${R}$IP_Chip${RS}:${G}$PT${RS} ]"
 echo "---------------------------------"
-php -S $IP_Chip:$PT
+php -S $IP_Chip:$PT &
+sleep 1
 ssh -R 80:$IP_Chip:$PT serveo.net
 fi
